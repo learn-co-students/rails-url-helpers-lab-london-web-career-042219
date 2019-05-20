@@ -1,5 +1,14 @@
 <div>
   <% @students.each do |student| %>
     <div><%= student.first_name + " " + student.last_name %></div>
+    <%= link_to 'See Student Page: ', student_path(student.id) %> <br>
+    <%= link_to 'Toggle "activated:" ', activate_path(student.id) %>
+    <% if student.active == false %>
+
+<h1>This student is currently inactive.</h1>
+<% else %>
+<div><%= student.first_name + " " + student.last_name %></div>
+<h1>This student is currently active.</h1>
+<% end %>
   <% end %>
 </div>

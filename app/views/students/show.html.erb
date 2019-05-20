@@ -1,1 +1,12 @@
+<% if @student.active == false %>
+
+<h1>This student is currently inactive.</h1>
 <h1><%= @student.to_s %></h1>
+<% else %>
+
+<h1>This student is currently active.</h1>
+<h1><%= @student.to_s %></h1>
+
+<% end %>
+<% #button_to Generates a form containing a single button that submits to the URL created by the set of options. This is the safest method to ensure links that cause changes to your data are not triggered by search bots or accelerators. %>
+
